@@ -1,0 +1,57 @@
+{% extends 'base.htm' %} {% block body %}
+
+
+<!-- Form -->
+<section class="bg-dark text-light p-1 text-center text-sm-start p-lg-0 p-lg-5">
+  <div class="container">
+    <h2 class="text-center fw-bold">Movieflix</h2>
+    <p class="text-center lead my-2 py-3">
+      Movieflix is a content based recommendation system for movies. This system uses a movie
+      dataset obtained from <a href="https://www.kaggle.com/tmdb/tmdb-movie-metadata" class=" btn btn-primary">Kaggle</a>
+    </p>
+  </div>
+</section>
+
+<div class="container mt-500">
+  <form action="{{ url_for('main') }}" method="POST">
+    <div class="mb-3">
+      <label for="movie_input" class="form-label">Enter a Movie</label>
+      <input
+        type="text"
+        class="form-control"
+        id="movie_input"
+        name="movie_name"
+        placeholder="Enter a full movie name"
+        required
+      />
+      <div id="emailHelp" class="form-text">
+        We will provide movies similar to this one
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Get Recommendations <i class="bi bi-chevron-right"></i>
+    </button>
+  </form>
+</div>
+
+
+
+<!-- <section class="main-content">
+  <div class="container">
+    <div class="main-text">
+      <h2><u>Movie Recommendation System</u></h2>
+      <form action="{{ url_for('main') }}" method="POST">
+        <input
+          type="text"
+          class="form-control"
+          id="movie_name"
+          name="movie_name"
+          placeholder="Enter a full movie name"
+          required
+        />
+        <input type="submit"class="form-control" id="submission_button" value="Submit" />
+      </form>
+    </div>
+  </div>
+</section> -->
+{% endblock %}

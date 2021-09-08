@@ -1,0 +1,32 @@
+{% extends 'base.htm'%} {% block body%}
+<div class="container">
+  <h1 class="text-center my-3 text-dark">Recommendations based on your input</h1>
+  {% for movie in movies %}
+
+  <div class="card mb-5" style="width: 100%">
+    <div class="card-body bg-dark rounded">
+      <h5 class="card-title text-capitalize fs-2 fw-bolder">
+        {{ movie.Name }}
+      </h5>
+      <h6
+        class="
+          card-subtitle
+          mb-2
+          text-muted
+          badge
+          bg-primary
+          fs-4
+          fw-bold
+          text-reset
+        "
+      >
+        {{ movie.Genres }}
+      </h6>
+      <p class="card-text fs-5 fw-normal">{{ movie.Description }}</p>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}
